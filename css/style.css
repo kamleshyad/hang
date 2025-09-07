@@ -276,7 +276,12 @@ a{text-decoration: none;}
 
 .footersec .footer__middle{display: flex ; justify-content: space-between; align-items: flex-start; padding: clamp(25px, 2.1vw, 40px) 0; gap: clamp(22px, 1.58vw, 30px); border: solid rgba(255, 255, 255, 0.25); border-width: 1px 0; flex-wrap: wrap;}
 .footersec .footer__middle .footer__widget h2{font-size: clamp(17px, 1.05vw, 20px); font-weight: 500; line-height: 110%; color: var(--color-white); margin-bottom: clamp(12px, 1.58vw, 30px);}
-.footersec .footer__middle .footer__widget.phone ul{display: flex; flex-flow: row nowrap; gap: 10px;}
+.footersec .footer__middle .footer__widget ul{display: flex; flex-flow: row nowrap; gap: 10px;}
+.footersec .footer__middle .footer__widget.social ul li a{border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; display: inline-flex ; width: 43px; aspect-ratio: 1 / 1; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.8); transition: all 0.3s linear;}
+.footersec .footer__middle .footer__widget.social ul li.youtube a svg, .footersec .footer__middle .footer__widget.social ul li.insta a svg{font-size: 26px;}
+.footersec .footer__middle .footer__widget.social ul li.linkedin a svg{font-size: 20px;}
+.footersec .footer__middle .footer__widget.social ul li.twt a svg{font-size: 21px;}
+.footersec .footer__middle .footer__widget.social ul li a:hover{background: var(--color-white); color: var(--bg-dark-yellow);}
 .footersec .footer__middle .footer__widget.phone ul li{color: var(--color-white); font-weight: 500; font-size: clamp(20px, 1.58vw, 30px);}
 .footersec .footer__middle .footer__widget.phone ul li a{color: var(--color-white); font-weight: 500; font-size: clamp(20px, 1.58vw, 30px); transition: all 0.3s linear;}
 
