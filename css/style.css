@@ -115,9 +115,8 @@ a{text-decoration: none;}
 .bannermainslider button span svg{width: auto; height: auto; margin: 0;}
 .bannermainslider button:hover span svg{fill: var(--color-red);}
 
-/* .bannerthumslider .swiper-wrapper{} */
+.bannerthumslider{ border-radius: 30px;}
 .bannerthumslider .swiper-slide { border-radius: 30px; overflow: hidden; }
-/* .bannerthumslider .swiper-slide {opacity: 0.4; } */
 .bannerthumslider .swiper-slide-thumb-active { opacity: 1; }
 .bannerthumslider img{height: 100%; object-fit: cover; border-radius: 8px; cursor: pointer; }
 /* Banner slider Styling */
@@ -321,7 +320,7 @@ a{text-decoration: none;}
 .footersec .footer__middle .footer__widget.phone ul li{color: var(--color-white); font-weight: 500; font-size: clamp(20px, 1.58vw, 30px);}
 .footersec .footer__middle .footer__widget.phone ul li a{color: var(--color-white); font-weight: 500; font-size: clamp(20px, 1.58vw, 30px); transition: all 0.3s linear;}
 
-.footersec .footer__bottom{display: flex ; justify-content: space-between; align-items: center; padding: clamp(25px, 2.1vw, 40px) 0; flex-wrap: wrap; gap: 15px;}
+.footersec .footer__bottom{display: flex ; justify-content: center; align-items: center; padding: clamp(25px, 2.1vw, 40px) 0; flex-wrap: wrap; gap: 15px;}
 .footersec .footer__bottom p{margin-bottom: 0; font-size: clamp(13px, 0.84vw, 16px); color: #676666;}
 
 @keyframes shadowAnim {
