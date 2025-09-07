@@ -1,12 +1,13 @@
 :root{
     --color-black: #13172b;
     --color-white: #fff;
-    /* --bg-yellow: #feeb9d; */
+    --color-gradient: linear-gradient(90deg, var(--color-red) 0%, var(--bg-yellow) 100%);
     --bg-yellow: #fdb35b;
     --bg-dark-yellow: #f7941f;
     --color-red: #cc0d39;
     --text-color: #5e626f;
     --color-light-gray: #aeb0b6;
+    /* --bg-yellow: #feeb9d; */
 }
 
 *{margin: 0; padding: 0; box-sizing: border-box;}
@@ -74,10 +75,18 @@ a{text-decoration: none;}
 .title{font-size: 14px; color: var(--bg-dark-yellow); font-weight: 400; line-height: 16px; letter-spacing: 4px; text-transform: uppercase;}
 .subtitle{font-size: clamp(24px, 2.24vw, 40px);; color: var(--color-black); font-weight: 600; line-height: 48px; margin-top: 5px;}
 
+
+.marquee {position: relative; overflow: hidden; width: 100%; padding: clamp(5px, 0.47vw, 9px); background: var(--color-gradient);}
+.marquee__track {display: flex; align-items: center; gap: 2rem; will-change: transform;}
+.marquee-item {white-space: nowrap; display: flex ; align-items: center; gap: 15px; margin-bottom: 0; text-transform: uppercase; font-size: clamp(13px, 0.84vw, 16px); font-weight: 500; color: var(--color-white); }
+.marquee:hover .marquee__track {animation-play-state: paused;} /* JS handles motion; this only pauses via a class toggle if you add it */
+
+
 .top{display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: clamp(20px, 2.1vw, 40px);}
 .top .top__rightsec a{display: inline-flex ; align-items: center; justify-content: center; gap: clamp(12px, 1.05vw, 20px); border: 1px solid var(--color-white); font-size: 13px; color: var(--color-white); font-weight: 400; line-height: 20px; text-transform: uppercase; transition: all 0.3s linear; padding: 10px 20px; border-radius: 50px;}
 .top .top__rightsec a span{display: inline-flex; font-size: 22px;}
 .top .top__rightsec a:hover{color: var(--color-black); background: var(--color-white); border-color: var(--color-white);}
+
 
 .headersec{padding-block: 15px;}
 .headersec .headerwrap{display: flex; justify-content: space-between; align-items: center; gap: 80px;}

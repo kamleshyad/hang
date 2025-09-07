@@ -8,6 +8,14 @@
     <title>Document</title>
 </head>
 <body>
+    <section class="marquee" data-speed="60">
+        <div class="marquee__track">
+          <p class="marquee-item"><img src="./images/sparkle-icon.png" width="15" height="15" alt="limited time offer"> limited time offer</p>
+          <!-- add more items if you want -->
+          <!-- <p class="marquee-item">free shipping worldwide</p> -->
+          <!-- <p class="marquee-item">new arrivals dropping weekly</p> -->
+        </div>
+      </section>      
     <header class="headersec">
         <div class="xl-container">
             <div class="headerwrap">
@@ -1968,6 +1976,99 @@
         },
         });
     </script>
+
+    <script>
+        (() => {
+        const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+        
+        function initSeamlessMarquee(root) {
+            const track = root.querySelector('.marquee__track');
+            if (!track) return;
+        
+            // Speed in pixels/sec (data-speed lets you tweak per marquee)
+            const speed = Number(root.dataset.speed || 60); 
+        
+            // Step 1: Build a buffer by cloning children until we have at least 2x container width
+            function fillTrack() {
+            const containerWidth = root.clientWidth || 1;
+            const base = Array.from(track.children);
+            if (base.length === 0) return;
+        
+            // reset to original
+            track.innerHTML = '';
+            base.forEach(n => track.appendChild(n.cloneNode(true)));
+        
+            // duplicate until >= 2x container width
+            while (track.scrollWidth < containerWidth * 2.5) {
+                base.forEach(n => track.appendChild(n.cloneNode(true)));
+            }
+            }
+        
+            // Step 2: Animate with rAF, snapping by one segment width to avoid visible jumps
+            let raf, last, x = 0, segmentWidth = 0;
+        
+            function measure() {
+            // One loop segment equals half the children (the first "base set")
+            // We detect the segment by summing widths of the first batch before repetition.
+            // Since we cloned in order, we can compute width of the first sequence length.
+            const kids = Array.from(track.children);
+            if (kids.length === 0) return 0;
+        
+            // Detect the repeat point by looking for same text/HTML pattern
+            // Simpler: measure width until roughly half the children; works because we cloned entire base set repeatedly.
+            const half = Math.floor(kids.length / 2);
+            let w = 0;
+            for (let i = 0; i < half; i++) w += kids[i].getBoundingClientRect().width;
+            return w || 1;
+            }
+        
+            function loop(ts) {
+            if (last == null) last = ts;
+            const dt = (ts - last) / 1000; // seconds
+            last = ts;
+        
+            const pxPerSec = clamp(speed, 10, 600); // safety
+            x -= pxPerSec * dt;
+        
+            // Snap back by exactly one segment to stay seamless
+            if (-x >= segmentWidth) x += segmentWidth;
+        
+            track.style.transform = `translate3d(${x}px,0,0)`;
+            raf = requestAnimationFrame(loop);
+            }
+        
+            function start() {
+            cancelAnimationFrame(raf);
+            x = 0; last = null;
+            fillTrack();
+            // Let layout settle, then measure
+            requestAnimationFrame(() => {
+                segmentWidth = measure();
+                cancelAnimationFrame(raf);
+                raf = requestAnimationFrame(loop);
+            });
+            }
+        
+            // Pause on hover (optional)
+            // let paused = false;
+            // root.addEventListener('mouseenter', () => { if (!paused){ paused = true; cancelAnimationFrame(raf); } });
+            // root.addEventListener('mouseleave', () => { if (paused){ paused = false; last = null; raf = requestAnimationFrame(loop); } });
+        
+            // Re-init on resize or font load shifts
+            const ro = new ResizeObserver(() => start());
+            ro.observe(root);
+            window.addEventListener('load', start);
+            document.addEventListener('readystatechange', () => { if (document.readyState === 'complete') start(); });
+        
+            // Public API if you ever need it:
+            return { restart: start, destroy: () => { cancelAnimationFrame(raf); ro.disconnect(); } };
+        }
+        
+        // Auto-init all .marquee on page
+        document.querySelectorAll('.marquee').forEach(initSeamlessMarquee);
+        })();
+    </script>
+    
 
 </body>
 </html>
