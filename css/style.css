@@ -172,6 +172,27 @@ a{text-decoration: none;}
 .trendingsec .rightsec a span{display: inline-flex; font-size: 22px;}
 .trendingsec .rightsec a:hover{color: var(--color-black); background: var(--color-white); border-color: var(--color-white);}
 
+.topselling .xl-container{background-color: #F2F2F2; padding: clamp(40px, 4.2vw, 80px) 0; border-radius: clamp(15px, 2.1vw, 40px);}
+.topselling .top{align-items: center;}
+.topselling .top__rightsec ul{display: flex ; align-items: center; gap: clamp(7px, 0.53vw, 10px); flex-wrap: wrap; justify-content: center;}
+.topselling .top__rightsec ul li button{border: 0; font-size: 13px; font-weight: 500; padding: 7px 10px; transition: 0.3s ease; color: var(--color-white); background: var(--color-black); border-radius: 50px; cursor: pointer;}
+.topselling .top__rightsec ul li button.active{background: var(--bg-dark-yellow); color: var(--color-black);}
+.topselling .productlist ul{display: flex; flex-flow: row wrap; gap: 20px;}
+.topselling .productlist ul li{width: 23.76%;}
+.topselling .productlist ul li a{display: block; border-radius: 10px; padding: clamp(11px, 0.74vw, 14px); background: var(--color-white);}
+.topselling .productlist .productbox{display: flex ; align-items: center; gap: clamp(12px, 1.58vw, 30px); font-size: 0;}
+.topselling .productlist .productbox .productimg{border-radius: 12px; overflow: hidden;}
+.topselling .productlist .productbox .productimg img{width: 96px; aspect-ratio: 1; object-fit: cover; object-position: top; transform: scale(1); transition: all 0.3s linear;}
+.topselling .productbox .price{display: flex ; gap: 8px; flex-flow: column wrap; justify-content: flex-start; align-items: flex-start; margin-bottom: 5px;}
+.topselling .productbox .price p{ font-size: 15px; color: var(--color-black); font-weight: 500; line-height: 15px; display: inline-flex ; align-items: center; }
+.topselling .productbox .price p span{line-height: 0;}
+.topselling .productbox .price p + p { font-size: 14px; font-weight: 400; position: relative; color: var(--text-color);}
+.topselling .productbox .price p + p::before { content: ""; position: absolute; top: 50%; left: 2px; width: 100%; border-top: 1px solid var(--color-black); }
+.topselling .productbox .detail{width: calc(100% - 66px);}
+.topselling .productbox .detail h4{margin-bottom: 4px; font-weight: 500; font-size: clamp(17px, 1.05vw, 20px); color: var(--color-black); transition: all 0.3s linear;}
+.topselling .productlist ul li a:hover .productimg img{transform: scale(1.05);}
+.topselling .productlist ul li a:hover h4{color: var(--bg-dark-yellow);}
+
 .videosec{margin: clamp(40px, 4.2vw, 80px) 0;}
 .videosec .videobox{border-radius: clamp(15px, 2.1vw, 40px); overflow: hidden; aspect-ratio: 1800 / 740; position: relative;}
 .videosec .videobox .imgbox .ul-video-cover { aspect-ratio: 1800 / 740; object-fit: cover; transition: none; position: absolute; height: 1000px; }
