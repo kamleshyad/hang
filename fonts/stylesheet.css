@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Jost';
+    src: url('Jost-Light.woff2') format('woff2'),
+        url('Jost-Light.woff') format('woff'),
+        url('Jost-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('Jost-Regular.woff2') format('woff2'),
+        url('Jost-Regular.woff') format('woff'),
+        url('Jost-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('Jost-Bold.woff2') format('woff2'),
+        url('Jost-Bold.woff') format('woff'),
+        url('Jost-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('Jost-Medium.woff2') format('woff2'),
+        url('Jost-Medium.woff') format('woff'),
+        url('Jost-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url('Jost-SemiBold.woff2') format('woff2'),
+        url('Jost-SemiBold.woff') format('woff'),
+        url('Jost-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
