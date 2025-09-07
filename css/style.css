@@ -84,9 +84,45 @@ a{text-decoration: none;}
 
 .headersec .headernav ul{font-size: 0; display: flex; align-items: center; gap: 40px;}
 .headersec .headernav ul li a{font-size: clamp(14px, 0.9vw, 16px); color: var(--color-black); text-transform: uppercase; font-weight: 400; line-height: clamp(40px, 3.15vw, 60px);}
-.headersec .header-action ul{font-size: 0; display: flex; align-items: center; gap: 50px;}
+.headersec .headernav ul li a:hover{color: var(--color-red);}
+.headersec .header-action ul{font-size: 0; display: flex; align-items: center; gap: 35px;}
+.headersec .header-action ul a{color: var(--color-black);}
+.headersec .header-action ul a:hover{color: var(--color-red);}
 
-.categorysec{padding-block: 127px 100px; position: relative;}
+/* Banner slider Styling */
+.bannersection{ overflow: hidden;}
+.bannersection .xl-container{ display: flex; gap: clamp(15px, 1.58vw, 30px);}
+.arrowswrap { position: absolute; top: 50%; transform: translateY(-50%); right: 0; z-index: 1; background-color: var(--color-white); display: flex; flex-direction: column; border-radius: 20px 0 0 20px; }
+
+.bannersection img{width: 100%; height: auto;}
+.bannermainslider{ position: relative; border-radius: 30px; max-width: 1042px; max-height: 740px;}
+/* .bannerthumslider { margin-right: calc(0% - clamp(0px, 12.61vw, 240px));} */
+.bannerthumslider { margin-right: -35px;}
+.bannermainslider .swiper-slide{ position: relative; text-align: left;}
+.bannermainslider .contentbox{position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 100%; padding: clamp(15px, 1.58vw, 30px); box-sizing: border-box;}
+.bannermainslider .contentbox .subtitle { font-weight: 400; font-size: clamp(16px, 1.05vw, 20px); letter-spacing: 0.3em; color: var(--color-red); margin-bottom: clamp(10px, 1.26vw, 24px); display: inline-block; }
+.bannermainslider .contentbox h2 { font-size: clamp(32px, 3.42vw, 65px); font-weight: 600; line-height: 108%; letter-spacing: -0.03em; color: var(--color-black); margin-bottom: clamp(7px, 0.89vw, 17px); }
+.bannermainslider .contentbox .banner-slide-price { font-size: clamp(13px, 0.84vw, 16px); display: flex ; align-items: center; gap: clamp(6px, 0.79vw, 15px); margin-bottom: clamp(13px, 1.21vw, 23px); }
+.bannermainslider .contentbox .banner-slide-price span{ font-weight: 600; font-size: clamp(18px, 1.58vw, 30px); color: var(--color-red); }
+.bannermainslider .contentbox { max-width: 58%; position: absolute; top: 50%; transform: translateY(-50%); left: clamp(15px, 3.15vw, 60px); }
+
+.bannermainslider .contentbox .btnsec a { color: var(--color-black); border-radius: 999px; border: 1px solid var(--color-black); display: inline-flex; align-items: center; justify-content: center; gap: clamp(12px, 1.05vw, 20px); height: clamp(45px, 3.15vw, 60px); line-height: clamp(45px, 3.15vw, 60px); padding: 0 clamp(20px, 1.58vw, 30px); font-weight: 400; font-size: clamp(13px, 0.84vw, 16px); position: relative; text-transform: uppercase;}
+.bannermainslider .contentbox .btnsec a:hover { background-color: var(--color-red); border-color: var(--color-red); color: var(--color-white); } i { padding-top: 5px; } 
+
+.bannermainslider button { display: flex ; align-items: center; width: auto; height: auto; font-size: 0; color: #000; background: none; border: 0; position: initial; margin: auto; padding: 12px 10px; box-sizing: border-box;}
+.bannermainslider button::after{display: none;}
+.bannermainslider button span {font-size: 20px; transform: rotate(270deg); display: flex;}
+.bannermainslider button span svg{width: auto; height: auto; margin: 0;}
+.bannermainslider button:hover span svg{fill: var(--color-red);}
+
+/* .bannerthumslider .swiper-wrapper{} */
+.bannerthumslider .swiper-slide { border-radius: 30px; overflow: hidden; }
+/* .bannerthumslider .swiper-slide {opacity: 0.4; } */
+.bannerthumslider .swiper-slide-thumb-active { opacity: 1; }
+.bannerthumslider img{height: 100%; object-fit: cover; border-radius: 8px; cursor: pointer; }
+/* Banner slider Styling */
+
+.categorysec{padding-block: 100px 100px; position: relative;}
 .categorysec .category-slider .swiper-slide{padding: 0 15px 27px 15px; font-size: 0; position: relative;}
 .categorysec .swiper-slide::after{position: absolute; top: 18px; right: -3px; display: inline-block; content: ""; width: 6px; height: 80%; background: url(../images/line-img.png) no-repeat center; background-size: contain;}
 .categorysec .swiper-slide:last-child::after{position: inherit;}
